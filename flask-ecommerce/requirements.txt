@@ -15,6 +15,7 @@ Mako==1.2.1
 MarkupSafe==2.1.1
 marshmallow==3.17.1
 marshmallow-sqlalchemy==0.28.1
+mysqlclient==2.1.1
 packaging==21.3
 PyJWT==2.4.0
 pyparsing==3.0.9

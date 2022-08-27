@@ -73,3 +73,13 @@
 ```bash
     flask db upgrade
 ```
+
+# Nuestras variables de entorno (Necesario para que funcione)
+```text
+FLASK_DEBUG=True
+FLASK_RUN_PORT=5000
+# FLASK_APP='main.py'
+FLASK_RUN_HOST=127.0.0.1
+
+DB_URI=mysql://root:root@localhost/flask_ecommerce
+```

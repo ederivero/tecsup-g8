@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,3 +129,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ------------------- MANUAL VARIABLES ---------------------
+
+# Sirve para indicar que jalara los estilos de los archivos estaticos 
+# http://whitenoise.evans.io/en/stable/
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Sirve para indicar en que carpeta se guardaran todos los archivos estaticos (CSS, JS, HTML) al momento de correr el comando 'python manage.py collectstatic'
+STATIC_ROOT = BASE_DIR / 'archivos_staticos'

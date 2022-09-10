@@ -1,1 +1,1 @@
-web: gunicorn agenda.agenda.wsgi
+web: gunicorn agenda.wsgi

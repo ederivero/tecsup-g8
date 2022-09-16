@@ -1,9 +1,0 @@
-django-admin startproject <nombre>                                      => crear un proyecto de django
-python manage.py                                                        => sirve para utilizar el CLI de django pero ya en el proyecto en especifico
-python manage.py startapp <nombre>                                      => sirve para crear una aplicacion dentro de mi proyecto de Django
-python manage.py runserver                                              => levanta el proyecto en modo de desarrollo
-python manage.py showmigrations                                         => mostrara todas las migraciones creadas en nuestro proyecto y las que ya se han ejecutado tendran una [X] 
-python manage.py makemigrations <NOMBRE_APP> --name <NOMBRE_MIGRACION>  => creara una migracion con los nuevos cambios realizados en esa aplicacion con ese determinado nombre
-python manage.py sqlmigrate <NOMBRE_APP> <NUMERO_MIGRACION>             => mostrara el resultado de la migracion en lenguaje SQL
-python manage.py migrate <NOMBRE_APP>                                   => ejecutara todas las migraciones faltantes en la base de datos
-python manage.py shell                                                  => crea una terminal de python PERO con todas las librerias que estamos usando en el proyecto ya precargadas

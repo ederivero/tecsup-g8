@@ -41,3 +41,29 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 
     class Meta:
         db_table = 'usuarios'
+
+
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=45, null=False)
+
+    class Meta:
+        db_table = 'categorias'
+
+class Figura(models.Model):
+    codigo = models.CharField(max_length=10, null=False, unique=True)
+    nombre = models.CharField(max_length=45, null=False)
+    # RELACIONES
+    categoria = models.ForeignKey(to=Categoria, on_delete=models.PROTECT, related_name='figuras')
+
+    class Meta:
+        db_table = 'figuras'
+
+class Registro(models.Model):
+    numeroVeces = models.IntegerField(db_column='num_veces', null=False)
+    tipo = models.CharField(max_length=40, choices=(['NORMAL','NORMAL'],['ESPECIAL', 'ESPECIAL'], ['ESCUDO', 'ESCUDO']))
+    # RELACIONES
+    figura = models.ForeignKey(to=Figura, on_delete=models.PROTECT, related_name='figura_registros')
+    usuario = models.ForeignKey(to=Usuario, on_delete=models.PROTECT, related_name='usuario_registros')
+
+    class Meta:
+        db_table = 'registros'

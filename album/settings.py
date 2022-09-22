@@ -163,3 +163,5 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=1, minutes=5, seconds=10)
 }
+
+STATIC_ROOT = BASE_DIR / 'archivos_staticos'

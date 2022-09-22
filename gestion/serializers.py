@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Usuario
+from .models import Usuario, Registro
 
 class RegistrarUsuarioSerializer(serializers.ModelSerializer):
 
@@ -16,3 +16,15 @@ class RegistrarUsuarioSerializer(serializers.ModelSerializer):
         # user_permissions > es el related_name entre el auth_user y el auth_user_permission 
         # en este escenario no necesitamos acceder a estas propiedades por ende las excluiremos
         exclude = ['groups', 'user_permissions']
+
+
+class RegistroSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Registro
+        fields = '__all__'
+
+class MostrarFigurasSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Registro
+        exclude = ['usuario']
+        depth = 2

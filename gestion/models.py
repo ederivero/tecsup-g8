@@ -67,3 +67,9 @@ class Registro(models.Model):
 
     class Meta:
         db_table = 'registros'
+        # unique_together > indica que esas columnas no se pueden repetir, puede ser una lista de listas si queremos varias intervenciones
+        # unique_together = [['tipo','usuario'], ['figura', 'numeroVeces']]
+        
+        # que el registro entre tipo - usuario - figura nunca se puede repetir osea dos usuarios pueden tener la misma figuraa con el mismo tipo O la misma figura pueden tener el mismo tipo pero de diferentes usuarios
+        #  pero si solo queremos utilizar una sola condicion podemos usar un solo arreglo
+        unique_together = ['tipo','usuario','figura']

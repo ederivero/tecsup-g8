@@ -29,3 +29,23 @@ class PermisoPersonalizado(BasePermission):
             return False
         else:
             return True
+
+
+class EsAdministrador(BasePermission):
+    message = 'El usuario no tiene los permisos necesarios'
+
+    def has_permission(self, request: Request, view):
+        print(request.data.get('rol'))
+        # para que si el rol es 'USUARIO' no pida la token y si el rol es 'ADMINISTRADOR' tenga q pedir token
+        if request.data.get('rol') == 'USUARIO':
+            return True
+
+        # validamos que en el auth tengamos una token
+        if request.auth is None:
+            return False
+
+        # validamos que el usuario identificado sea administrador para poder crear
+        if request.user.rol == 'ADMINISTRADOR':
+            return True
+        else:
+            return False

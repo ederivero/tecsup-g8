@@ -5,11 +5,12 @@ from rest_framework.response import Response
 from rest_framework import status
 from .enviar_correos import enviar_correo_validacion
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
-from .permisos import PermisoPersonalizado
+from .permisos import PermisoPersonalizado, EsAdministrador
 from .models import Registro
 
 class RegistroUsuarioView(CreateAPIView):
     serializer_class = RegistrarUsuarioSerializer
+    permission_classes = [EsAdministrador]
 
     def post(self, request: Request):
         data = self.serializer_class(data= request.data)

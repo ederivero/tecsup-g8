@@ -1,7 +1,7 @@
 {
-  "name": "mi-aplicacion",
+  "name": "crud_express",
   "version": "1.0.0",
-  "description": "Mi primera aplicacion en nodeJs",
+  "description": "Mi primer CRUD en express",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,12 +9,13 @@
     "start": "node index.js"
   },
   "keywords": [
-    "backend",
-    "tecsup"
+    "express",
+    "nodejs",
+    "backend"
   ],
-  "author": "Eduardo de Rivero",
+  "author": "eduardo de rivero",
   "license": "ISC",
   "dependencies": {
-    "is-odd-num": "^1.1.1"
+    "express": "^4.18.1"
   }
 }

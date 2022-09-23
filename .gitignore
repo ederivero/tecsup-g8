@@ -171,3 +171,5 @@ venv
 entorno_*
 
 archivos_staticos/
+
+node_modules/

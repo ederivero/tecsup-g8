@@ -1,0 +1,16 @@
+{
+  "name": "mi-aplicacion",
+  "version": "1.0.0",
+  "description": "Mi primera aplicacion en nodeJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "backend",
+    "tecsup"
+  ],
+  "author": "Eduardo de Rivero",
+  "license": "ISC"
+}

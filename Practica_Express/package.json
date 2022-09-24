@@ -1,26 +1,23 @@
 {
-  "name": "crud_express",
+  "name": "practica_express",
   "version": "1.0.0",
-  "description": "Mi primer CRUD en express",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "start:dev": "nodemon index.js"
+    "start:dev": "nodemon ./src/index.js"
   },
-  "keywords": [
-    "express",
-    "nodejs",
-    "backend"
-  ],
-  "author": "eduardo de rivero",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
+    "@types/morgan": "^1.9.3",
     "nodemon": "^2.0.20"
   }
 }

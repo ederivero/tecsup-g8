@@ -1,0 +1,7 @@
+NOTA: Siempre utilizar el prefijo 'npx' para poder utilizar el CLI de prisma
+
+prisma init                 > inicializa el proyecto de prisma en el cual crea la carpeta prisma con el archivo para los modelos
+prisma migrate dev          > crea una nueva migracion en base a los cambios que hemos realizado en el archivo schema.prisma en relacion a la base de datos
+prisma migrate deploy       > ejecuta todas las migraciones que aun no se han realizado en la base de datos
+prisma migrate reset        > resetea la base de datos haciendo que perdamos la data y se vuelva a ejecutar las migraciones
+prisma db seed              > alimenta la base de datos con la informacion inicial definida en el archivo seed.js

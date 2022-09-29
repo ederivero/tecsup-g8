@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model partidoPolitico {
+  id     Int    @id @default(autoincrement())
+  nombre String @unique @db.VarChar(45)
+  logo   String @db.Text
+
+  @@map("partidos_politicos")
+}
+
+model Region {
+  id     Int    @id @default(autoincrement())
+  nombre String @unique @db.VarChar(45)
+
+  @@map("regiones")
+}
+
+model Votante {
+  dni      String @id @db.VarChar(8)
+  nombre   String @db.Text
+  apellido String @db.Text
+  region   String @db.Text
+
+  @@map("votantes")
+}

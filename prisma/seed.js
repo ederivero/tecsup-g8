@@ -37,6 +37,28 @@ async function alimentar() {
     skipDuplicates: true,
   });
 
+  await conexion.partidoPolitico.createMany({
+    data: [
+      {
+        nombre: "Las uvas sabrosas",
+        logo: "https://t3.ftcdn.net/jpg/05/32/87/20/240_F_532872053_Ux1cXZu0BWB4lyXJLs4D59jrqOyt8Wm8.jpg",
+      },
+      {
+        nombre: "Los tres cerditos",
+        logo: "https://t4.ftcdn.net/jpg/04/98/29/51/240_F_498295187_Knzh67lKqQjxyBrnNgMniaM4li06DIWf.jpg",
+      },
+      {
+        nombre: "La nave espacial del futuro",
+        logo: "https://t3.ftcdn.net/jpg/00/27/64/98/240_F_27649860_2MyaQ7hwMrZuYssYRkiFWj1bDH598iB1.jpg",
+      },
+      {
+        nombre: "La naranja mecanica",
+        logo: "https://t4.ftcdn.net/jpg/02/00/23/53/240_F_200235369_Hc2frRHwJlFmnweBGLAFcqxurU9ocH8j.jpg",
+      },
+    ],
+    skipDuplicates: true,
+  });
+
   console.log("Base de datos alimentada exitosamente");
 }
 

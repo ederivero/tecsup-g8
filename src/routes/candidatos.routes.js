@@ -1,6 +1,11 @@
 import { Router } from "express";
-import { crearCandidato } from "../controllers/candidatos.controller.js";
+import {
+  crearCandidato,
+  listarCandidatos,
+} from "../controllers/candidatos.controller.js";
 
 export const candidatosRouter = Router();
 
-candidatosRouter.post("/candidato", crearCandidato);
+candidatosRouter.route("/candidato").post(crearCandidato).get(listarCandidatos);
+// candidatosRouter.post("/candidato", crearCandidato);
+// candidatosRouter.get("/candidato", listarCandidatos);

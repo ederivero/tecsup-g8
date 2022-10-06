@@ -23,6 +23,7 @@ model Region {
   id         Int         @id @default(autoincrement())
   nombre     String      @unique @db.VarChar(45)
   candidatos Candidato[]
+  votantes   Votante[]
 
   @@map("regiones")
 }
@@ -31,7 +32,8 @@ model Votante {
   dni       String     @id @db.VarChar(8)
   nombre    String     @db.Text
   apellido  String     @db.Text
-  region    String     @db.Text
+  regionId  Int        @map("region_id")
+  region    Region     @relation(fields: [regionId], references: [id])
   sufragios Sufragio[]
 
   @@map("votantes")

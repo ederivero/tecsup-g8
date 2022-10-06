@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 export const crearVotante = async (req, res) => {
   // DISCLAIMER: en este caso al ser la API gratuita no nos proporciona el ubigeo por lo que modificaremos el endpoint para recibir la region a la cual pertenece
-  const { dni, region } = req.body;
+  const { dni, regionId } = req.body;
   try {
     const respuesta = await fetch(`https://apiperu.dev/api/dni/${dni}`, {
       headers: {
@@ -22,7 +22,7 @@ export const crearVotante = async (req, res) => {
           apellido: data.apellido_paterno + " " + data.apellido_materno,
           nombre: data.nombres,
           dni: data.numero,
-          region,
+          regionId,
         },
       });
 

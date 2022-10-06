@@ -44,7 +44,11 @@ export const listarResultados = async (req, res) => {
   console.log(region);
 
   // SELECT * FROM sufragios INNER JOIN candidatos ON sufragios.candidato_id = candidatos.id INNER JOIN regiones ON candidatos.region_id = regiones.id WHERE regiones.nombre = 'AREQUIPA';
-  const data = await conexion.sufragio.findMany({
+  const data = await conexion.sufragio.groupBy({
+    by: ["candidatoId"],
+    _count: {
+      _all: true,
+    },
     where: {
       candidate: {
         region: {
@@ -53,6 +57,7 @@ export const listarResultados = async (req, res) => {
       },
     },
   });
+
   return res.status(200).json({
     message: null,
     content: data,
